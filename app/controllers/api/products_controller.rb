@@ -3,6 +3,8 @@ class Api::ProductsController < ApplicationController
   def index
     if params[:search]
       @products = Product.search_by_product_details(params[:search])
+    elsif params[:users]
+      @products = User.find(params[:id]).products
     else
       @products = Product.includes(:seller)
     end
