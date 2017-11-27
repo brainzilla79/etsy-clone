@@ -37,3 +37,8 @@ export const getProductsByCategory = categoryId => dispatch =>
   ProductApiUtil.fetchProductsByCategory(categoryId).then(products =>
     dispatch(receiveAllProducts(products))
   );
+
+export const getProductsBySeller = userId => dispatch =>
+  ProductApiUtil.fetchProductsBySeller(userId).then(products =>
+    dispatch(receiveAllProducts(products))
+  );

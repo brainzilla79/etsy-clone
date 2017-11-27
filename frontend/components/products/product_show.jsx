@@ -1,6 +1,7 @@
 import React from "react";
 import CommentIndexContainer from "../comments/comment_index_container";
 import CommentFormContainer from "../comments/comment_form_container";
+import ProductIndexContainer from "./product_index_container";
 
 export default class ProductShow extends React.Component {
   constructor(props) {
@@ -67,6 +68,7 @@ export default class ProductShow extends React.Component {
             <CommentFormContainer productId={product.id} />
             <CommentIndexContainer productId={product.id} />
           </div>
+          <ProductIndexContainer userId={this.props.product.seller.id}/>
         </div>
       </div>
     );

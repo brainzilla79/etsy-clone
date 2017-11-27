@@ -27,6 +27,8 @@ export default class ProductIndex extends React.Component {
       this.props.getSearchProducts(parsed.search);
     } else if (this.props.location.pathname === "/") {
       this.props.getFeaturedProducts();
+    } else if (this.props.match.params.productId) {
+      this.props.getProductsBySeller(this.props.userId);
     } else {
       this.props.getProductsByCategory(this.props.match.params.categoryId);
     }

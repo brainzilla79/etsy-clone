@@ -4,7 +4,8 @@ import {
   getAllProducts,
   getSearchProducts,
   getFeaturedProducts,
-  getProductsByCategory
+  getProductsByCategory,
+  getProductsBySeller
 } from "../../actions/product_actions";
 
 const mapStateToProps = state => ({
@@ -14,7 +15,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = () => dispatch => ({
   getSearchProducts: searchTerm => dispatch(getSearchProducts(searchTerm)),
   getFeaturedProducts: () => dispatch(getFeaturedProducts()),
-  getProductsByCategory: categoryId => dispatch(getProductsByCategory(categoryId))
+  getProductsByCategory: categoryId => dispatch(getProductsByCategory(categoryId)),
+  getProductsBySeller: userId => dispatch(getProductsBySeller(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex);
